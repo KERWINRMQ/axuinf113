@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DIGITO MAYOR,MENOR Y MODA DE UN NUMERO</title>
+	<style type="text/css">
+	body{
+		background: #F3EEEB; 
+	}
+	h1{
+		text-align: center;
+		margin: 50px;
+	}
+	h3{
+		text-align: center;
+	}
+	 .calculos{
+	 	background: #c7502c;
+	 	color: #f0e8e6;
+	 	margin: 5px;
+	 	padding: 10px;
+	 	font-size: 30px;
+	 	margin-left: 530px;
+	 	margin-right: 530px;
+	 }
+	 .boton{
+	 	background: #c7502c;
+	 	color: #f0e8e6;
+	 	margin: 5px;
+	 	padding: 10px;
+	 	margin-left: 530px;
+	 	margin-right: 530px;
+	 }
+	</style>
+</head>
+<body>
+<h1>DIGITO MAYOR,MENOR Y MODA DE UN NUMERO</h2>
+<div class="boton">
+	<h3>INGRESE UN NUMERO:</h3>
+	<input type="text" id="numero"/ >
+	<input type="button" value="Calcular" onclick="menmaymod()"/>
+</div>
+<div class="calculos">
+<div id="respuesta"></div>
+<div id="respuesta1"></div>
+<div id="respuesta2"></div>
+</div>
+<script language="javascript">
+	function menmaymod() {
+var numero= document.getElementById("numero").value;
+var may=numero%10;
+var n=numero;
+var m=numero;
+var men=numero%10;
+while(numero!=0){
+	d=numero%10
+	numero = Math.floor(numero/10);
+
+	if(d>may){
+		may=d;
+	}
+	if(d<men){
+		men=d;
+	}
+}
+var n1=n;
+var c=0;
+var c1=0;
+var mas=0;
+var mas1=n1%10;
+while(n!=0){
+	d1=n%10
+	n = Math.floor(n/10);
+	while(n1!=0){
+		d2=n1%10
+		n1 = Math.floor(n1/10);
+		if(d1==d2){
+			c=c+1;
+			c1=c1+1;
+		}
+		
+	}
+	if(c>mas){
+		mas=c;
+		mas1=d1;
+	}
+	c=0;
+	n1=m;
+}
+document.getElementById("respuesta").innerHTML = "Mayor: "+may;
+document.getElementById("respuesta1").innerHTML = "Menor: "+men;
+document.getElementById("respuesta2").innerHTML = "Moda: "+mas1;
+}
+</script>
+</body>
+</html>
